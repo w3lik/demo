@@ -163,8 +163,11 @@ Game():onEvent(EVENT.Game.Start, "myCursor", function()
     ---@param ab Ability
     ---@return boolean
     local abilityStart = function(ab)
-        cursorLock()
-        return abilityCheck(ab)
+        if (abilityCheck(ab)) then
+            cursorLock()
+            return true
+        end
+        return false
     end
     local abilityOver = function()
         cursorUnLock()
