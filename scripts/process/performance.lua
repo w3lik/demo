@@ -155,5 +155,28 @@ process:onStart(function(this)
     --        end
     --    end)
     --end
+    
+    --- uiEventRegister
+    --do
+    --    local bubble = this:bubble()
+    --    local ui = FrameButton("testUIForUIEventReg", UIGame)
+    --    bubble.ui = ui
+    --    collectgarbage("collect")
+    --    local x1 = os.clock()
+    --    for _ = 1, 100000 do
+    --        --- reg
+    --        ui:onEvent(EVENT.Frame.LeftClick, "xxx", function() end)
+    --        ui:onEvent(EVENT.Frame.Enter, "xxx", function() end)
+    --        --- modify
+    --        ui:onEvent(EVENT.Frame.LeftClick, "xxx", function() end)
+    --        ui:onEvent(EVENT.Frame.Enter, "xxx", nil)
+    --        --- modify
+    --        ui:onEvent(EVENT.Frame.LeftClick, "xxx", nil)
+    --        ui:onEvent(EVENT.Frame.Enter, "xxx", function() end)
+    --        --- unreg
+    --        ui:onEvent(EVENT.Frame.Enter, "xxx", nil)
+    --    end
+    --    print(string.format("Time: %.3f", os.clock() - x1))
+    --end
 
 end)
